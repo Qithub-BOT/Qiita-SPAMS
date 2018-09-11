@@ -52,7 +52,7 @@ Qithub の公開鍵で複合してご利用ください。
 
 ## Opt-out
 
-特定記事の削除など Opt-out を希望される場合は、以下を
+特定記事の削除など Opt-out を希望される場合は、以下のいずれかでご連絡ください。
 
 - 記事 ID を添えて [Issue](https://github.com/Qithub-BOT/Qithub-ORG/issues) にあげる。
 - 該当記事を削除したコミットを Pull Request であげる。
