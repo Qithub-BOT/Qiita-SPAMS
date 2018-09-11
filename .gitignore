@@ -9,3 +9,4 @@
 !/.gitignore
 !*.enc
 !*.md
+!*.py
