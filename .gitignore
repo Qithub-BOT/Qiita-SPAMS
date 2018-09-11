@@ -1,0 +1,11 @@
+# ignore raw
+/.raw/
+
+# ignore all
+*
+
+# allow any
+!*/
+!/.gitignore
+!*.enc
+!*.md
