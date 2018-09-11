@@ -1,4 +1,4 @@
-# Qiita記事墓
+# Qiita 墓地（Qiita 記事墓場）
 
 このリポジトリは [Qiita](https://qiita.com/) のスパム記事をアーカイブしています。
 
