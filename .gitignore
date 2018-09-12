@@ -9,3 +9,5 @@
 !/.gitignore
 !*.enc
 !*.md
+!*.py
+!.travis.yml
