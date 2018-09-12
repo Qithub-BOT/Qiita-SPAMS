@@ -10,3 +10,4 @@
 !*.enc
 !*.md
 !*.py
+!.travis.yml
