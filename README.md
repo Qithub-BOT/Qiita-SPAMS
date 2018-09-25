@@ -1,26 +1,48 @@
 # Qiita 墓地（Qiita 記事墓場）
 
-このリポジトリは [Qiita](https://qiita.com/) のスパム記事をアーカイブしています。
+このリポジトリは [Qiita](https://qiita.com/) でスパムと認定された記事の Qiita 記事 ID をアーカイブしています。
 
 Qiita 記事のスパム検知のエンジン開発や機械学習用のコーパス作成などにご利用ください。
 
+なお、本リポジトリにはスパム記事の本文データは含まれていません。別途 API を通して取得ください。
+
 ## フォーマット
 
-### ファイル名
-
-> `<Qiita の記事 ID>.enc`
+Qiita 記事の投稿日をファイル名とした JSON 配列のプレーン・テキスト。（UTF-8）
 
 ### データ形式
 
-> Markdown 形式のテキスト・ファイルを RSA 暗号化したバイナリ。
+- ファイル名：
+    `<YYYY_mm_dd>.json` （投稿された日）
 
-内容自体がスパムであるため Google 八分を受けないように、Markdown 形式のテキストを Qithub の RSA 秘密鍵で暗号化しています。
+- ファイルの内容（JSON配列）：
+    １要素１記事
+    ```json
+    [
+        {
+            "id_item": "<記事ID>",
+            "id_user": "<ユーザID>",
+            "url_cache": "<Qithub API のキャッシュURL>",
+            "url_raw": "<Qiita API のURL>",
+            "date_post": "<投稿日>"
+        },
+        {
+            "id_item": "<記事ID>",
+            "id_user": "<ユーザID>",
+            "url_cache": "<Qithub API のキャッシュURL>",
+            "url_raw": "<Qiita API のURL>",
+            "date_post": "<投稿日>"
+        },
+        {
+            //以下同文
+        }
+    ]
+    ```
 
-Qithub の公開鍵で復号してご利用ください。
 
 ### ディレクトリ構成
 
-`YYYY` / `mm` / `dd` の日付を元にしたディレクトリに保存されています。
+`YYYY` / `mm` の日付を元にしたディレクトリに保存されています。
 
 ```
 ./
@@ -28,27 +50,29 @@ Qithub の公開鍵で復号してご利用ください。
 ├── LICENSE.md
 ├── 2018
 │   ├── 08
-│   │   ├── 01
-│   │   │   ├── xxxxxxxxxxxxxxxxxxxx.enc
-│   │   │   ├── xxxxxxxxxxxxxxxxxxxx.enc
-│   │   │   ├── xxxxxxxxxxxxxxxxxxxx.enc
-│   │   │   ：
-│   │   ├── 02
-│   │   │   ├── xxxxxxxxxxxxxxxxxxxx.enc
-│   │   │   ├── xxxxxxxxxxxxxxxxxxxx.enc
-│   │   │   ├── xxxxxxxxxxxxxxxxxxxx.enc
-：   ：   ：   ：
+│   │   ├── 2018_08_01.json
+│   │   ├── 2018_08_02.json
+│   │   ├── 2018_08_03.json
+│   │   │         ：
+│   ├── 09
+│   │   ├── 2018_09_01.json
+│   │   ├── 2018_09_02.json
+│   │   ├── 2018_09_03.json
+│   │   │         ：
+：   ：   ：         ：
 ```
 
 ## スパムの判断について
 
-新規投稿から**一定期間後にアクセスして投稿が削除されていた場合はスパム**と見なして自動的にアーカイブしています。
+新規投稿から**一定期間後にアクセスして投稿とユーザーが削除されていた場合はスパム記事**と見なして自動的にアーカイブしています。
 
-- 現在の確認スパン：投稿から１週間後
+- 現在の確認間隔：投稿から１週間後
 
-## 文責
+## Issue
 
-このリポジトリは Qiita/Qiitadon の同人サークル「Qithub」によってメンテナンスされています。
+本リポジトリに関する Issue は下記リポジトリで取りまとめています。
+
+https://github.com/Qithub-BOT/Qithub-ORG/issues
 
 ## Opt-out
 
@@ -57,6 +81,10 @@ Qithub の公開鍵で復号してご利用ください。
 - 記事 ID を添えて [Issue](https://github.com/Qithub-BOT/Qithub-ORG/issues) にあげる。
 - 該当記事を削除したコミットを Pull Request であげる。
 - [サークルメンバー](https://github.com/Qithub-BOT/Qithub-ORG/blob/master/MEMBERS.md)に Mastodon でダイレクトメッセージを送る。
+
+## 文責
+
+このリポジトリは Qiita/Qiitadon の同人サークル「Qithub」によってメンテナンスされています。
 
 ## 免責事項/ライセンス
 
