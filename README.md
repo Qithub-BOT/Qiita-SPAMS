@@ -4,7 +4,7 @@
 
 Qiita 記事のスパム検知のエンジン開発や機械学習用のコーパス作成などにご利用ください。
 
-なお、**本リポジトリにはスパム記事の本文データは含まれていません**。別途 JSON ファイルの "utl_cache" や "url_raw" キーに記載された URL 先の API を通して取得ください。いずれの API も JSON 形式で取得できます。
+なお、**本リポジトリにはスパム記事の本文データは含まれていません**。別途 JSON ファイルの "`url_cache`" や "`url_raw`" キーに記載された URL 先の API を通して取得ください。いずれの API も JSON 形式で取得できます。
 
 また、本家 Qiita のサーバー負荷をあげないため、[キャッシュサーバー（`url_cach` キーの URL）を設けました](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)ので、そちらをご利用ください。
 
