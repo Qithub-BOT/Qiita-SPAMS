@@ -1,13 +1,13 @@
 # ignore raw
 /.raw/
-
 # ignore all
 *
 
 # allow any
 !*/
 !/.gitignore
-!*.enc
+!*.json
 !*.md
 !*.py
 !.travis.yml
+!*.cfg
