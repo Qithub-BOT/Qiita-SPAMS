@@ -36,7 +36,7 @@ Qiita 記事ID `affde3d2cca6ecec0c87` の場合は、`a/affde3d2cca6ecec0c87.jso
 {
     "id_item": "affde3d2cca6ecec0c87",
     "id_user": "wedoseday",
-    "url_cache": "https://qithub.tk/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87",
+    "url_cache": "https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87",
     "url_raw": "https://qiita.com/api/v2/items/affde3d2cca6ecec0c87",
     "date_post": "2018-05-22T05:08:25+09:00"
 }
