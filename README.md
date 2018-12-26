@@ -44,18 +44,18 @@ Qiita 記事ID `affde3d2cca6ecec0c87` の場合は、`a/affde3d2cca6ecec0c87.jso
 
 ### ディレクトリ構成
 
-Qiita 記事 ID の頭文字をディレクトリ名とした階層内に各々保存されています。
+`/spams` ディレクトリ下に、Qiita 記事 ID の頭文字をディレクトリ名とした階層内に各々保存されています。
 
 ```
-./
+./spams/
 ├── README.md
 ├── LICENSE.md
-├── a
+├── a/
 │   ├── a00a765cb4fe79e16c35.json
 │   ├── a01077d83a4c3bb5c7dd.json
 │   ：
 ：
-└── f
+└── f/
     ├── f002a7ed1ce1aad5c474.json
 ：   ：   ：         ：
 ```
