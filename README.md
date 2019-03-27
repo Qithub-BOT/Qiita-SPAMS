@@ -18,7 +18,7 @@ Qiita 記事の投稿日をファイル名とした JSON 配列のプレーン�
     `<Qiita記事ID>.json` （Qiita の記事 ID がファイル名）
 
 - ファイルの内容（JSON配列）：
-    １要素１記事
+    １ファイル１記事
     ```json
     {
         "id_item": "<記事ID>",
