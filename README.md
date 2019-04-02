@@ -42,11 +42,17 @@ Qiita 記事ID `affde3d2cca6ecec0c87` の場合は、`a/affde3d2cca6ecec0c87.jso
 }
 ```
 
+スパム記事の本文データの取得例：
+
+```bash
+crul -o spam.json https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87
+```
+
 ### ディレクトリ構成
 
 `/spams` ディレクトリ下に、Qiita 記事 ID の頭文字をディレクトリ名とした階層内に各々保存されています。
 
-```
+```text
 ./spams/
 ├── README.md
 ├── LICENSE.md
