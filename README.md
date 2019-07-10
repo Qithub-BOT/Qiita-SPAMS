@@ -8,11 +8,12 @@ Qiita 記事のスパム検知のエンジン開発や機械学習用のコー�
 
 なお、**本リポジトリにはスパム記事の本文データは含まれていません**。`/spams` ディレクトリにある各JSON ファイルの "`url_cache`" や "`url_raw`" キーに記載された URL 先の API を通して別途取得ください。いずれの API も JSON 形式で取得できます。
 
-また、`url_cache` キーの URL は、本家 Qiita のサーバー負荷をあげないために[設けたキャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)ですので、なるべくそちらをご利用ください。（キャッシュ・サーバーが落ちてたら本家をご利用ください）
+`url_cache` キーの URL は、本家 Qiita のサーバー負荷をあげないために[設けたキャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)のリクエスト URL です。`url_raw` は本家 Qiita の API のリクエスト URL です。なるべくキャッシュ・サーバーの URL をご利用ください。（キャッシュ・サーバーは、ちょいちょい落ちるので、落ちてた場合は本家をご利用ください）
 
 ## フォーマット
 
-Qiita 記事の投稿日をファイル名とした JSON 配列のプレーン・テキスト。（UTF-8）
+- Qiita 記事の記事 ID をファイル名とした JSON 配列のプレーン・テキスト。（UTF-8）
+  - `spams` ディレクトリに設置されています。このとき記事 ID の最初の文字をディレクトリ名とした下に設置されています。
 
 ### データ形式
 
@@ -25,30 +26,33 @@ Qiita 記事の投稿日をファイル名とした JSON 配列のプレーン�
     {
         "id_item": "<記事ID>",
         "id_user": "<ユーザID>",
-        "url_cache": "<Qithub API のキャッシュURL>",
+        "url_cache": "<Qithub API のキャッシュ URL>",
         "url_raw": "<Qiita API のURL>",
         "date_post": "<投稿日>"
     }
     ```
+
 ### サンプル
 
-Qiita 記事ID `affde3d2cca6ecec0c87` の場合は、`a/affde3d2cca6ecec0c87.json` ファイルになり内容は以下の通りになります。
+Qiita 記事ID `affde3d2cca6ecec0c87` の場合、ファイル名は `affde3d2cca6ecec0c87.json` になり、設置先は `spams/a/affde3d2cca6ecec0c87.json` になります。
 
-```json
-{
-    "id_item": "affde3d2cca6ecec0c87",
-    "id_user": "wedoseday",
-    "url_cache": "https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87",
-    "url_raw": "https://qiita.com/api/v2/items/affde3d2cca6ecec0c87",
-    "date_post": "2018-05-22T05:08:25+09:00"
-}
-```
+- ファイルの内容は以下の通り:
 
-スパム記事の本文データの取得例：
+    ```json
+    {
+        "id_item": "affde3d2cca6ecec0c87",
+        "id_user": "wedoseday",
+        "url_cache": "https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87",
+        "url_raw": "https://qiita.com/api/v2/items/affde3d2cca6ecec0c87",
+        "date_post": "2018-05-22T05:08:25+09:00"
+    }
+    ```
 
-```bash
-crul -o spam.json https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87
-```
+- スパム記事の本文データの取得例：
+
+    ```bash
+    crul -o spam.json https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87
+    ```
 
 ### ディレクトリ構成
 
