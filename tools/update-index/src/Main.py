@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import sys
 import json
 import glob
 
@@ -8,7 +9,7 @@ import glob
 NAME_DIR_SPAMS  = 'spams'
 NAME_FILE_INDEX = 'index.json'
 PATH_DIR_SCRIPT = os.path.abspath(__file__)
-PATH_DIR_ROOT   = os.path.abspath(PATH_DIR_SCRIPT + '/../../../')
+PATH_DIR_ROOT   = os.path.abspath(PATH_DIR_SCRIPT + '/../../../../')
 PATH_DIR_SPAMS  = PATH_DIR_ROOT + '/' + NAME_DIR_SPAMS
 PATH_FILE_INDEX = PATH_DIR_ROOT + '/' + NAME_FILE_INDEX
 
@@ -33,7 +34,7 @@ def get_list_files(PathDir):
     return glob.glob(PathDir + '/*/*.json', recursive=True)
 
 
-def get_DictItemInfo(PathFileFull):
+def get_dict_iteminfo(PathFileFull):
     if os.path.isdir(PathFileFull):
         return {}
     if os.path.isfile(PathFileFull):
@@ -52,7 +53,7 @@ def save_dirlist_as_json(PathDirTarget, PathFileToSave):
     CountFile = 0
 
     for PathFileFull in ListPaths:
-        DictItemInfo = get_DictItemInfo(PathFileFull)
+        DictItemInfo = get_dict_iteminfo(PathFileFull)
 
         if DictItemInfo != {}:
             append_dict_to_file_obj(DictItemInfo, ObjFile)
