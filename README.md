@@ -4,6 +4,8 @@
 
 Qiita 記事のスパム検知のエンジン開発や機械学習用のコーパス作成などにご利用ください。
 
+- 現在の登録件数: [count.txt](./count.txt)
+
 なお、**本リポジトリにはスパム記事の本文データは含まれていません**。`/spams` ディレクトリにある各JSON ファイルの "`url_cache`" や "`url_raw`" キーに記載された URL 先の API を通して別途取得ください。いずれの API も JSON 形式で取得できます。
 
 また、`url_cache` キーの URL は、本家 Qiita のサーバー負荷をあげないために[設けたキャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)ですので、なるべくそちらをご利用ください。（キャッシュ・サーバーが落ちてたら本家をご利用ください）
@@ -96,4 +98,3 @@ https://github.com/Qithub-BOT/Qithub-ORG/issues
 - クリエイティブ・コモンズ 表示ー継承 4.0 国際ライセンス
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-
