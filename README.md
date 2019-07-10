@@ -6,9 +6,11 @@ Qiita 記事のスパム検知のエンジン開発や機械学習用のコー�
 
 - 現在の登録件数: [count.txt](./count.txt)
 
-なお、**本リポジトリにはスパム記事の本文データは含まれていません**。`/spams` ディレクトリにある各JSON ファイルの "`url_cache`" や "`url_raw`" キーに記載された URL 先の API を通して別途取得ください。いずれの API も JSON 形式で取得できます。
+なお、**本リポジトリにはスパム記事の本文データは含まれていません**。`/spams` ディレクトリにある各 JSON ファイルの "`url_cache`" や "`url_raw`" キーに記載された URL 先の API を通して別途取得ください。いずれの API も JSON 形式で取得できます。
 
-`url_cache` キーの URL は、本家 Qiita のサーバー負荷をあげないために[設けたキャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)のリクエスト URL です。`url_raw` は本家 Qiita の API のリクエスト URL です。なるべくキャッシュ・サーバーの URL をご利用ください。（キャッシュ・サーバーは、ちょいちょい落ちるので、落ちてた場合は本家をご利用ください）
+`url_cache` キーの URL は、本家 Qiita のサーバー負荷をあげないために設けた[キャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)のリクエスト URL です。`url_raw` は本家 Qiita の API のリクエスト URL です。
+
+なるべくキャッシュ・サーバーの URL をご利用ください。（キャッシュ・サーバーは、ちょいちょい落ちるので、落ちてた場合は本家をご利用ください）
 
 ## フォーマット
 
