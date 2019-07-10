@@ -11,3 +11,4 @@
 !*.py
 !.travis.yml
 !*.cfg
+!/count.txt
