@@ -1,16 +1,19 @@
 # Qiita 墓地（Qiita 記事墓場）
 
-このリポジトリは [Qiita](https://qiita.com/) でスパムと認定された記事の Qiita 記事 ID をアーカイブしています。
+このリポジトリは **[Qiita](https://qiita.com/) のスパム記事の情報を 7 万件以上アーカイブしています**。Qiita のスパム記事を検知するエンジン開発や機械学習用のコーパス作成などにご利用ください。
 
-Qiita 記事のスパム検知のエンジン開発や機械学習用のコーパス作成などにご利用ください。
+## 注意
 
-- 現在の登録件数: [count.txt](./count.txt)
+このリポジトリには**スパム記事の本文データは含まれていません**。各々の JSON ファイルに記載された API の URL（"`url_cache`" や "`url_raw`" キー）を通して取得ください。いずれの API も JSON 形式で取得できます。
 
-なお、**本リポジトリにはスパム記事の本文データは含まれていません**。`/spams` ディレクトリにある各 JSON ファイルの "`url_cache`" や "`url_raw`" キーに記載された URL 先の API を通して別途取得ください。いずれの API も JSON 形式で取得できます。
+- `url_cache` キー: Qiita 記事情報のキャッシュサーバーの URL です。本家 Qiita のサーバー負荷をあげないために設けた[キャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)です。なるべくこちらをご利用ください。
+- `url_raw` キー: 本家 Qiita の API の URL です。キャッシュサーバーが落ちている場合に利用ください。
 
-`url_cache` キーの URL は、本家 Qiita のサーバー負荷をあげないために設けた[キャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)のリクエスト URL です。`url_raw` は本家 Qiita の API のリクエスト URL です。
+## スパムの判断について
 
-なるべくキャッシュ・サーバーの URL をご利用ください。（キャッシュ・サーバーは、ちょいちょい落ちるので、落ちてた場合は本家をご利用ください）
+新規投稿から**一定期間後にアクセスして、投稿とユーザーが削除されていた場合をスパム記事と判断**しています。そのため、引越しをした場合もスパムとして判断される可能性があります。（Opt-Out はページ下部をご覧ください）
+
+- リポジトリ更新頻度：現在、サーバー OS 入れ替えのため、不定期で更新しています。
 
 ## フォーマット
 
@@ -74,12 +77,6 @@ Qiita 記事ID `affde3d2cca6ecec0c87` の場合、ファイル名は `affde3d2cc
 ：   ：   ：         ：
 ```
 
-## スパムの判断について
-
-新規投稿から**一定期間後にアクセスして投稿とユーザーが削除されていた場合はスパム記事**と見なしたものをアーカイブしています。
-
-- リポジトリ更新頻度：現在、サーバー OS 入れ替えのため、不定期で更新しています。
-
 ## Issue
 
 本リポジトリに関する Issue は下記リポジトリで取りまとめています。
@@ -90,13 +87,13 @@ https://github.com/Qithub-BOT/Qithub-ORG/issues
 
 特定記事の削除など Opt-out を希望される場合は、以下のいずれかでご連絡ください。
 
+- 該当記事の記事 ID を .gitignore に追記したコミットを Pull Request であげる。
 - 記事 ID を添えて [Issue](https://github.com/Qithub-BOT/Qithub-ORG/issues) にあげる。
-- 該当記事を削除したコミットを Pull Request であげる。
 - [サークルメンバー](https://github.com/Qithub-BOT/Qithub-ORG/blob/master/MEMBERS.md)に Mastodon でダイレクトメッセージを送る。
 
 ## 文責
 
-このリポジトリは Qiita/Qiitadon の同人サークル「Qithub」によってメンテナンスされています。
+このリポジトリは Qiita/Qiitadon の同人サークル「[Qithub](https://github.com/Qithub-BOT/Qithub-ORG)」によってメンテナンスされています。
 
 ## 免責事項/ライセンス
 
