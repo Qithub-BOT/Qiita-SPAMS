@@ -97,6 +97,13 @@ https://github.com/Qithub-BOT/Qithub-ORG/issues
 - 記事 ID を添えて [Issue](https://github.com/Qithub-BOT/Qithub-ORG/issues) にあげる。
 - [サークルメンバー](https://github.com/Qithub-BOT/Qithub-ORG/blob/master/MEMBERS.md)に Mastodon でダイレクトメッセージを送る。
 
+## 謝辞
+
+このリポジトリは、以下のリポジトリのデータにお世話になっております。
+
+- [https://github.com/yyano/Qiita-News](https://github.com/yyano/Qiita-News) @ GitHub
+- [Qiitaの新着記事を見たい。なのでQiita APIを叩こう。](https://qiita.com/yyano/items/f8172f80cb93307af317) @ Qiita
+
 ## 文責
 
 このリポジトリは Qiita/Qiitadon の同人サークル「[Qithub](https://github.com/Qithub-BOT/Qithub-ORG)」によってメンテナンスされています。
