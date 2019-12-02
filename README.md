@@ -1,10 +1,14 @@
 # Qiita 墓地（Qiita 記事墓場）
 
-このリポジトリは **[Qiita](https://qiita.com/) のスパム記事の情報を 7 万件以上アーカイブしています**。Qiita のスパム記事を検知するエンジン開発や機械学習用のコーパス作成などにご利用ください。
+このリポジトリは **[Qiita](https://qiita.com/) のスパム記事の情報を 10 万件以上アーカイブしています**。Qiita のスパム記事を検知するエンジン開発や機械学習用のコーパス作成などにご利用ください。
 
-## 注意
+- おすすめの記事: [Qiitaのスパム狩りをしたらAutoMLに仕事を奪われた件](https://qiita.com/dcm_chida/items/0b687fe42b932e090a36) @ Qiita
 
-このリポジトリには**スパム記事の本文データは含まれていません**。各々の JSON ファイルに記載された API の URL（"`url_cache`" や "`url_raw`" キー）を通して取得ください。いずれの API も JSON 形式で取得できます。
+## 注意（データはエイリアスです）
+
+**このリポジトリ自体にはスパム記事の本文データは含まれていません**。スパム記事の本文を取得するのに必要な情報を JSON ファイルで提供しています。
+
+各々の JSON ファイルに記載された API の URL（"`url_cache`" や "`url_raw`" キー）を通して取得ください。いずれの API も JSON 形式で取得できます。
 
 - `url_cache` キー: Qiita 記事情報のキャッシュサーバーの URL です。本家 Qiita のサーバー負荷をあげないために設けた[キャッシュ・サーバー](https://github.com/Qithub-BOT/Qithub-ORG/tree/master/api/v1/qiita-cache)です。なるべくこちらをご利用ください。
 - `url_raw` キー: 本家 Qiita の API の URL です。キャッシュサーバーが落ちている場合に利用ください。
@@ -41,6 +45,7 @@
 
 Qiita 記事ID `affde3d2cca6ecec0c87` の場合、ファイル名は `affde3d2cca6ecec0c87.json` になり、設置先は `spams/a/affde3d2cca6ecec0c87.json` になります。
 
+
 - ファイルの内容は以下の通り:
 
     ```json
@@ -53,10 +58,11 @@ Qiita 記事ID `affde3d2cca6ecec0c87` の場合、ファイル名は `affde3d2cc
     }
     ```
 
-- スパム記事の本文データの取得例：
+- キャッシュの URL 例: [https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87](https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87)
+- キャッシュ（スパム記事の本文データ）の取得例：
 
     ```bash
-    crul -o spam.json https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87
+    curl -o spam.json https://qithub.gq/api/v1/qiita-cache/?id=affde3d2cca6ecec0c87
     ```
 
 ### ディレクトリ構成
