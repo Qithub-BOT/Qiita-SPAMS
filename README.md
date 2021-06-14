@@ -2,7 +2,9 @@
 
 このリポジトリは **[Qiita](https://qiita.com/) のスパム記事の情報を 10 万件以上アーカイブしています**。Qiita のスパム記事を検知するエンジン開発や機械学習用のコーパス作成などにご利用ください。
 
-- ダウンロード: [releses](https://github.com/Qithub-BOT/Qiita-SPAMS/releases/latest) ページより `data_items_spam-XXXXXXXX.zip` をダウンロードしてください。（スパム本文の JSON データ・アーカイブです）
+- ダウンロード:
+    - [releses](https://github.com/Qithub-BOT/Qiita-SPAMS/releases/latest) ページより `data_items_spam-XXXXXXXX.zip` をダウンロードしてください。（スパム本文の JSON データ・アーカイブです）
+    - [IPFS](https://qiita.com/KEINOS/items/c92268386d265042ea16#%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E9%96%A2%E6%95%B0%E3%81%A8%E6%AC%A1%E4%B8%96%E4%BB%A3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0-ipfs-%E3%81%AE%E9%96%A2%E4%BF%82): `QmbAKJ4sZgru2NRQxxA9uD9XXRjWbMxJ5BPtMaZuDMLXEs`
 - おすすめの記事: [Qiitaのスパム狩りをしたらAutoMLに仕事を奪われた件](https://qiita.com/dcm_chida/items/0b687fe42b932e090a36) @ Qiita
 
 ## 注意（データはエイリアスです）
